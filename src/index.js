@@ -6,11 +6,11 @@ const twilio = require('twilio');
 dotenv.config();
 
 
-app.get('/',(req,res)=>{
+app.get('',(req,res)=>{
     res.send("Welcome")
 })
 
-app.get('/voicecall',(req,res)=>{
+app.get('/call',(req,res)=>{
     const accountSid = process.env.TWILIO_ACCOUNT_SID;
     const authToken = process.env.TWILIO_AUTH_TOKEN;
     const client = new twilio(accountSid, authToken);
