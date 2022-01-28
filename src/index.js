@@ -6,7 +6,7 @@ const twilio = require('twilio');
 dotenv.config();
 
 
-app.get('',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send("Welcome")
 })
 
@@ -31,6 +31,6 @@ app.get('/voicecall',(req,res)=>{
         res.send(error)
     }
 })
-app.listen(3000,()=>{
-    console.log(`server listening at port 3000`)
-})
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
